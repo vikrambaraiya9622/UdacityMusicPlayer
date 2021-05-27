@@ -1,0 +1,2 @@
+rootProject.name = "Udacity Music Player"
+include ':app'
