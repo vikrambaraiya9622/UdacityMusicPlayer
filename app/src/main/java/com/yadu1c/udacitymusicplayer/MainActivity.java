@@ -22,6 +22,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
   static boolean nowplaying=false;
+    static Song[] songs;
 
     @Override
     protected void onResume() {
@@ -41,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         Context context=getApplicationContext();
         Switch changeview=findViewById(R.id.switchstate);
 
-        Song[] songs = { new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
+         songs = new Song[]{ new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
         new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
+        new Song("Beedi2 (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
         new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
         new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
         new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putDouble("songstarttime",songobj.getmStartTime());
                 bundle.putDouble("songendttime",songobj.getmEndTime());
                 bundle.putInt("songimg",songobj.getmThumbnail());
+                bundle.putInt("curentposition",position);
                 intent.putExtras(bundle);
                 startActivity(intent);
 
