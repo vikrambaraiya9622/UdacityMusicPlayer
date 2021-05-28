@@ -3,10 +3,13 @@ package com.yadu1c.udacitymusicplayer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.yadu1c.udacitymusicplayer.Adapter.SongApapter;
 import com.yadu1c.udacitymusicplayer.Adapter.SongGridViewAdapter;
@@ -55,7 +58,27 @@ public class MainActivity extends AppCompatActivity {
         songlistview.setVisibility(View.VISIBLE);
         songsGridview.setVisibility(View.INVISIBLE);
 
+        songlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Object o = songlistview.getItemAtPosition(position);
+                Song songobj= (Song) o;
+                Log.d("ListViewClick","List View clicked for song list ");
+                Toast.makeText(MainActivity.this, songobj.getmName() +" " + songobj.getmSinger() + "" + songobj.getmEndTime() , Toast.LENGTH_SHORT).show();
+                // prestationEco str = (prestationEco)o; //As you are using Default String Adapter
+                //  Toast.makeText(getBaseContext(),str.getTitle(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        songsGridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Object o=songsGridview.getItemAtPosition(i);
+                Song songsgridobj=(Song)o;
+                Log.d("GridViewClicked","Grid View clicked for songlist ");
+                Toast.makeText(MainActivity.this, songsgridobj.getmName() +" " + songsgridobj.getmSinger() + "" + songsgridobj.getmEndTime() , Toast.LENGTH_SHORT).show();
+
+            }
+        });
         changeview.setOnCheckedChangeListener((compoundButton, b) -> {
                 if (b){
                     songlistview.setVisibility(View.INVISIBLE);
@@ -66,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     songlistview.setVisibility(View.VISIBLE);
                     songsGridview.setVisibility(View.INVISIBLE);
+                  //  songlistview.setOnItemClickListener((adapterView, view, i, l) -> );
+
                 }
                 });
 
