@@ -33,9 +33,11 @@ public class SongGridViewAdapter extends ArrayAdapter<Song> {
         Song currentSong=getItem(position);
         ImageView mthumbnail=convertView.findViewById(R.id.thumbnail);
         TextView msongname=convertView.findViewById(R.id.songname);
+        TextView msingername=convertView.findViewById(R.id.singername);
 
         mthumbnail.setImageResource(currentSong.getmThumbnail());
         msongname.setText(currentSong.getmName());
+        msingername.setText(currentSong.getmSinger());
         return  convertView;
     }
 }

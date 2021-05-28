@@ -17,5 +17,11 @@
         tools:text="Songname"
         android:id="@+id/songname"
         />
+<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Singername"
+        android:id="@+id/singername"
+        />
 
 </LinearLayout>
