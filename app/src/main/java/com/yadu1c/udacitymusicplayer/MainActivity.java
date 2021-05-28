@@ -2,11 +2,14 @@ package com.yadu1c.udacitymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -18,12 +21,26 @@ import com.yadu1c.udacitymusicplayer.Model.Song;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
+  static boolean nowplaying=false;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (nowplaying==true)
+        {
+            LinearLayout ll=findViewById(R.id.nowplayingfooter);
+            ll.setVisibility(View.VISIBLE);
+        }
+        Toast.makeText(this,""+nowplaying,Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Context context=getApplicationContext();
         Switch changeview=findViewById(R.id.switchstate);
+
         Song[] songs = { new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
         new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
         new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
@@ -67,6 +84,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, songobj.getmName() +" " + songobj.getmSinger() + "" + songobj.getmEndTime() , Toast.LENGTH_SHORT).show();
                 // prestationEco str = (prestationEco)o; //As you are using Default String Adapter
                 //  Toast.makeText(getBaseContext(),str.getTitle(),Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(context ,NowPlaying.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("Songname",songobj.getmName());
+                bundle.putString("SongSinger",songobj.getmSinger());
+                bundle.putDouble("songstarttime",songobj.getmStartTime());
+                bundle.putDouble("songendttime",songobj.getmEndTime());
+                bundle.putInt("songimg",songobj.getmThumbnail());
+                intent.putExtras(bundle);
+                startActivity(intent);
+
             }
         });
         songsGridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -76,7 +103,15 @@ public class MainActivity extends AppCompatActivity {
                 Song songsgridobj=(Song)o;
                 Log.d("GridViewClicked","Grid View clicked for songlist ");
                 Toast.makeText(MainActivity.this, songsgridobj.getmName() +" " + songsgridobj.getmSinger() + "" + songsgridobj.getmEndTime() , Toast.LENGTH_SHORT).show();
-
+                Intent intent=new Intent(context ,NowPlaying.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("Songname",songsgridobj.getmName());
+                bundle.putString("SongSinger",songsgridobj.getmSinger());
+                bundle.putDouble("songstarttime",songsgridobj.getmStartTime());
+                bundle.putDouble("songendttime",songsgridobj.getmEndTime());
+                bundle.putInt("songimg",songsgridobj.getmThumbnail());
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
         changeview.setOnCheckedChangeListener((compoundButton, b) -> {
