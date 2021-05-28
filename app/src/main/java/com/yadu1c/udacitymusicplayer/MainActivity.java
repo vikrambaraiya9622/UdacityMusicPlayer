@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.yadu1c.udacitymusicplayer.Model.Adapter.SongApapter;
+import com.yadu1c.udacitymusicplayer.Model.Adapter.SongGridViewAdapter;
 import com.yadu1c.udacitymusicplayer.Model.Song;
 
 import java.util.ArrayList;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         SongApapter songsadapter=new SongApapter(this, Arrays.asList(songs));
         ListView songlistview=findViewById(R.id.songlistview);
         songlistview.setAdapter(songsadapter);
+        SongGridViewAdapter songsgridadapter=new SongGridViewAdapter(this,Arrays.asList(songs));
+        GridView songsGridview=findViewById(R.id.songsGridView);
+        songsGridview.setAdapter(songsgridadapter);
 
     }
 }
