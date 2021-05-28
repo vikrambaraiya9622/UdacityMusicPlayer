@@ -1,7 +1,6 @@
-package com.yadu1c.udacitymusicplayer.Model.Adapter;
+package com.yadu1c.udacitymusicplayer.Adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

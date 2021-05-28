@@ -2,21 +2,17 @@ package com.yadu1c.udacitymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Switch;
 
-import com.yadu1c.udacitymusicplayer.Model.Adapter.SongApapter;
-import com.yadu1c.udacitymusicplayer.Model.Adapter.SongGridViewAdapter;
+import com.yadu1c.udacitymusicplayer.Adapter.SongApapter;
+import com.yadu1c.udacitymusicplayer.Adapter.SongGridViewAdapter;
 import com.yadu1c.udacitymusicplayer.Model.Song;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,7 +1,6 @@
-package com.yadu1c.udacitymusicplayer.Model.Adapter;
+package com.yadu1c.udacitymusicplayer.Adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,6 @@ import androidx.annotation.Nullable;
 
 import com.yadu1c.udacitymusicplayer.Model.Song;
 import com.yadu1c.udacitymusicplayer.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
