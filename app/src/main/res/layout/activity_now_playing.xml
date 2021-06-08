@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NowPlaying">
+    tools:context=".NowPlaying"
+    android:background="@color/primarylight">
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -15,6 +16,7 @@
         app:layout_constraintVertical_bias="0.2"
         android:id="@+id/nowplayingthumbnail"
         android:src="@drawable/finaldesign"
+        android:scaleType="fitXY"
         />
 
     <TextView
@@ -30,7 +32,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail"
-        tools:text="Song name" />
+        tools:text="Song name"
+        android:textColor="@color/white"/>
 
     <ProgressBar
         android:layout_marginLeft="16dp"
@@ -42,6 +45,7 @@
         android:id="@+id/nowplayingprogressbar"
         app:layout_constraintStart_toStartOf="parent"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+
         />
 
     <TextView
@@ -52,6 +56,7 @@
         android:text="00:00"
         app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
         android:id="@+id/nowplayingst"
+        android:textColor="@color/white"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -61,6 +66,7 @@
         android:text="04:00"
         app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
         android:id="@+id/nowplayinget"
+        android:textColor="@color/white"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,6 +85,7 @@
             app:icon="@drawable/ic_shuffle"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_weight="1"
+            android:onClick="shufflesong"
             />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnback"
@@ -87,15 +94,19 @@
             app:icon="@drawable/ic_back"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_weight="1"
-            />
+            android:onClick="backsong"
+            tools:ignore="OnClick" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnplaypause"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:icon="@drawable/ic_play"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            />
+            android:onClick="playpausesong"
+            app:icon="@drawable/ic_play"
+            tools:ignore="OnClick" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnnext"
             android:layout_width="0dp"
@@ -103,6 +114,7 @@
             app:icon="@drawable/ic_next"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_weight="1"
+            android:onClick="nextsong"
             />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnrepeat"
@@ -111,6 +123,7 @@
             app:icon="@drawable/ic_repeat"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_weight="1"
+            android:onClick="repeatsong"
             />
 
     </LinearLayout>

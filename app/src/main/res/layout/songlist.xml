@@ -12,6 +12,7 @@
         android:layout_weight="1"
         android:id="@+id/songthumbnail"
         android:layout_margin="8dp"
+        android:scaleType="fitXY"
         />
     <LinearLayout
         android:layout_width="0dp"
@@ -19,6 +20,8 @@
         android:layout_weight="9"
         android:orientation="vertical"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+
         >
         <TextView
             android:layout_width="match_parent"
@@ -26,6 +29,8 @@
             tools:text="Hum dil de chuke sanam"
             android:id="@+id/songname"
             android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
 
             />
         <TextView
@@ -34,7 +39,7 @@
             tools:text="Sunidhi Chauhan"
             android:id="@+id/singername"
             android:textColor="@color/white"
-
+            android:textStyle="italic"
             />
     </LinearLayout>
 

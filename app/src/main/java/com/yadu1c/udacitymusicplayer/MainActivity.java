@@ -12,6 +12,7 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yadu1c.udacitymusicplayer.Adapter.SongApapter;
@@ -20,10 +21,11 @@ import com.yadu1c.udacitymusicplayer.Model.Song;
 
 import java.util.Arrays;
 
+
 public class MainActivity extends AppCompatActivity {
   static boolean nowplaying=false;
     static Song[] songs;
-
+    public static int currentsong;
     @Override
     protected void onResume() {
         super.onResume();
@@ -31,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         {
             LinearLayout ll=findViewById(R.id.nowplayingfooter);
             ll.setVisibility(View.VISIBLE);
+            TextView footertv=findViewById(R.id.footersongname);
+            footertv.setText(songs[currentsong].getmName());
+            TextView footersingertv=findViewById(R.id.footersinger);
+            footersingertv.setText(songs[currentsong].getmSinger());
+
         }
         Toast.makeText(this,""+nowplaying,Toast.LENGTH_LONG).show();
     }
@@ -59,21 +66,9 @@ public class MainActivity extends AppCompatActivity {
         songlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Object o = songlistview.getItemAtPosition(position);
-                Song songobj= (Song) o;
-                Log.d("ListViewClick","List View clicked for song list ");
-                Toast.makeText(MainActivity.this, songobj.getmName() +" " + songobj.getmSinger() + "" + songobj.getmEndTime() , Toast.LENGTH_SHORT).show();
-                // prestationEco str = (prestationEco)o; //As you are using Default String Adapter
-                //  Toast.makeText(getBaseContext(),str.getTitle(),Toast.LENGTH_SHORT).show();
+
                 Intent intent=new Intent(context ,NowPlaying.class);
-                Bundle bundle=new Bundle();
-                bundle.putString("Songname",songobj.getmName());
-                bundle.putString("SongSinger",songobj.getmSinger());
-                bundle.putDouble("songstarttime",songobj.getmStartTime());
-                bundle.putDouble("songendttime",songobj.getmEndTime());
-                bundle.putInt("songimg",songobj.getmThumbnail());
-                bundle.putInt("curentposition",position);
-                intent.putExtras(bundle);
+                currentsong=position;
                 startActivity(intent);
 
             }
@@ -81,18 +76,9 @@ public class MainActivity extends AppCompatActivity {
         songsGridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Object o=songsGridview.getItemAtPosition(i);
-                Song songsgridobj=(Song)o;
-                Log.d("GridViewClicked","Grid View clicked for songlist ");
-                Toast.makeText(MainActivity.this, songsgridobj.getmName() +" " + songsgridobj.getmSinger() + "" + songsgridobj.getmEndTime() , Toast.LENGTH_SHORT).show();
+
                 Intent intent=new Intent(context ,NowPlaying.class);
-                Bundle bundle=new Bundle();
-                bundle.putString("Songname",songsgridobj.getmName());
-                bundle.putString("SongSinger",songsgridobj.getmSinger());
-                bundle.putDouble("songstarttime",songsgridobj.getmStartTime());
-                bundle.putDouble("songendttime",songsgridobj.getmEndTime());
-                bundle.putInt("songimg",songsgridobj.getmThumbnail());
-                intent.putExtras(bundle);
+                currentsong=i;
                 startActivity(intent);
             }
         });
@@ -136,5 +122,10 @@ public class MainActivity extends AppCompatActivity {
        new Song("Sajde (Singham returns)", "Arjit Singh", 00.00, 04.53, R.drawable.finaldesign),
        new Song("Titli (Chennai Express)", "Gopi Sunder", 00.00, 04.53, R.drawable.finaldesign)
        };
+    }
+
+    public void stopcurrentplayingsong(View view) {
+        LinearLayout ll=findViewById(R.id.nowplayingfooter);
+        ll.setVisibility(View.INVISIBLE);
     }
 }

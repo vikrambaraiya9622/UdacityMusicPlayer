@@ -2,42 +2,168 @@ package com.yadu1c.udacitymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
 import com.yadu1c.udacitymusicplayer.Model.Song;
 
-public class NowPlaying extends AppCompatActivity {
+import java.util.Random;
 
+public class NowPlaying extends AppCompatActivity {
+    Boolean shuffle=false;
+    Boolean repeat=false;
+    Boolean playing=true;
+    Boolean shufflesong=false;
+    Boolean repeatsong=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
-        Bundle bundle=getIntent().getExtras();
-        String songname=bundle.getString("Songname");
-        String singername=bundle.getString("SongSinger");
-        int thumbnail=bundle.getInt("songimg");
-        double starttime=bundle.getDouble("songstarttime");
-        double endttime=bundle.getDouble("songendtime");
-        int currentposition=bundle.getInt("currentposition");
-        Song nextsong=MainActivity.songs[currentposition+1];
+        updateplayingsong(MainActivity.currentsong);
+
+        Button backbtn=findViewById(R.id.btnback);
+        Button nextbtn=findViewById(R.id.btnnext);
+
+
+
+//
+
+    }
+
+    private void updateplayingsong(int currentSong) {
+        Song songobj= MainActivity.songs[currentSong];
+
+
+        String songname=songobj.getmName();
+        String singername=songobj.getmSinger();
+        int thumbnail=songobj.getmThumbnail();
+        double starttime=songobj.getmStartTime();
+        double endttime=songobj.getmEndTime();
+
+
         TextView songnametv=findViewById(R.id.nowplayingsongname);
         TextView sttv=findViewById(R.id.nowplayingst);
         TextView ettv=findViewById(R.id.nowplayinget);
         ImageView thumbnailimg=findViewById(R.id.nowplayingthumbnail);
         songnametv.setText(songname);
-        sttv.setText("$starttime");
+
         thumbnailimg.setImageResource(thumbnail);
 
         sttv.setText(""+starttime);
         ettv.setText(""+endttime);
         MainActivity.nowplaying=true;
-//
-//        songnametv.setText(nextsong.getmName());
-//        thumbnailimg.setImageResource(nextsong.getmThumbnail());
-//        sttv.setText(""+nextsong.getmStartTime());
-//        ettv.setText(""+nextsong.getmEndTime());
+    }
+
+
+    public void backsong(View view) {
+
+
+        if(shuffle){
+            Random randomNumber=new Random();
+            int size=MainActivity.songs.length;
+            int shufflesong=randomNumber.nextInt(size);
+            updateplayingsong(shufflesong);
+        }
+        else if(repeat){
+            updateplayingsong(MainActivity.currentsong);
+        }
+        else{
+            if(MainActivity.currentsong>0){
+                MainActivity.currentsong -=1;
+            }
+            else
+                MainActivity.currentsong=MainActivity.songs.length-1;
+            updateplayingsong( MainActivity.currentsong);
+        }
+    }
+
+    public void playpausesong(View view) {
+        if(playing){
+            //pause
+            MaterialButton playbtn=findViewById(R.id.btnplaypause);
+            playbtn.setIcon(getResources().getDrawable(R.drawable.ic_pause));
+            playing=false;
+            //stop progress bar
+
+        } else {
+            //pause
+            MaterialButton playbtn=findViewById(R.id.btnplaypause);
+            playbtn.setIcon(getResources().getDrawable(R.drawable.ic_play));
+            //resume progress bar
+
+        }
+    }
+
+    public void nextsong(View view) {
+        if(shuffle){
+            Random randomNumber=new Random();
+            int size=MainActivity.songs.length;
+            int shufflesong=randomNumber.nextInt(size);
+            updateplayingsong(shufflesong);
+        }
+        else if(repeat){
+            updateplayingsong(MainActivity.currentsong);
+        }
+        else {
+            if(MainActivity.currentsong<MainActivity.songs.length-1){
+                MainActivity.currentsong+=1;
+            }
+            else{
+                MainActivity.currentsong=0;}
+            updateplayingsong(MainActivity.currentsong);
+        }
+    }
+
+    public void shufflesong(View view) {
+        //shuffle=true;
+        repeat=false;
+        Button repeatbtn=findViewById(R.id.btnrepeat);
+        repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+        Button shufflebtn=findViewById(R.id.btnshuffle);
+        if(!shuffle){
+
+            shuffle=true;
+            shufflebtn.setBackgroundColor(getResources().getColor(R.color.white));
+        }
+        else
+        {
+
+            shuffle=false;
+            shufflebtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+
+        }
+
+    }
+
+    public void repeatsong(View view) {
+        //repeat=true;
+        shuffle=false;
+        shuffle=false;
+        Button shufflebtn=findViewById(R.id.btnshuffle);
+        shufflebtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+
+        Button repeatbtn=findViewById(R.id.btnrepeat);
+        if(!repeat){
+
+            repeat=true;
+            repeatbtn.setBackgroundColor(getResources().getColor(R.color.white));
+        }
+        else
+        {
+
+            repeat=false;
+            repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+
+        }
 
     }
 }
+//oncomplete check if repeat or shiffle on
