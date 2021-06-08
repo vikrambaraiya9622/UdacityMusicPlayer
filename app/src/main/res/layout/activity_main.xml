@@ -49,12 +49,9 @@
         android:backgroundTint="@color/design_default_color_primary_dark"
         >
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="2"
+           style="@style/smallImageThumbnail"
             android:src="@drawable/finaldesign"
-            android:scaleType="fitXY"
-            android:layout_margin="8dp"
+
             />
         <LinearLayout
             android:layout_width="0dp"
@@ -64,36 +61,23 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Songname"
-                    android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:id="@+id/footersongname"
-                android:maxLines="1"
-                android:ellipsize="end"
+
+               android:id="@+id/footersongname"
+                style="@style/songname"
+
                 />
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Songname"
-                android:textStyle="italic"
-                android:textColor="@color/white"
+
                 android:id="@+id/footersinger"
-                android:maxLines="1"
-                android:ellipsize="end"
+               style="@style/singername"
                 />
         </LinearLayout>
         <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text="X"
-            android:textColor="@color/white"
+
+style="@style/cancelButton"
+        android:text="@string/cancelButton"
             android:id="@+id/stopcurrentsong"
             android:onClick="stopcurrentplayingsong"
-            style="@style/Widget.AppCompat.Button.Borderless"
 
             />
 
