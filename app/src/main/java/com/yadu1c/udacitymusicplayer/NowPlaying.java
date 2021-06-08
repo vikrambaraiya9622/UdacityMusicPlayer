@@ -27,16 +27,17 @@ public class NowPlaying extends AppCompatActivity {
         TextView ettv=findViewById(R.id.nowplayinget);
         ImageView thumbnailimg=findViewById(R.id.nowplayingthumbnail);
         songnametv.setText(songname);
+        sttv.setText("$starttime");
         thumbnailimg.setImageResource(thumbnail);
 
         sttv.setText(""+starttime);
         ettv.setText(""+endttime);
         MainActivity.nowplaying=true;
-
-        songnametv.setText(nextsong.getmName());
-        thumbnailimg.setImageResource(nextsong.getmThumbnail());
-        sttv.setText(""+nextsong.getmStartTime());
-        ettv.setText(""+nextsong.getmEndTime());
+//
+//        songnametv.setText(nextsong.getmName());
+//        thumbnailimg.setImageResource(nextsong.getmThumbnail());
+//        sttv.setText(""+nextsong.getmStartTime());
+//        ettv.setText(""+nextsong.getmEndTime());
 
     }
 }

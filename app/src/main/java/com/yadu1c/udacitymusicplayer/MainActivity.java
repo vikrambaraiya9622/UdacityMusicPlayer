@@ -42,27 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Context context=getApplicationContext();
         Switch changeview=findViewById(R.id.switchstate);
 
-         songs = new Song[]{ new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi2 (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
-        new Song("Beedi (from Omkara)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign)
-        };
+        updatePlaylist();
 
         SongApapter songsadapter=new SongApapter(this, Arrays.asList(songs));
         ListView songlistview=findViewById(R.id.songlistview);
@@ -132,5 +112,29 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
+    }
+
+    private void updatePlaylist() {
+        songs = new Song[]{ new Song("Beedi (from Omkara)", "Monty Sharma", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Swawariya(swawariya)", "Monty sharma", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Kuch To Hua Hai (Kal ho na Ho)", "Sony Music India", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Hawa Hawai 2.0 (Tumhari Sulu)", "Kavita Krishnamurty", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Boro Boro (Radio Edit)", "Arash", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Koi Ladki Hai (Kuch Kuch Hota Hai)", "Lata Mangeshkar", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Swag se swagat (Tiger Zinda Hai)", "Vishal Dadlani", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Bumbro (Mission Kashmir)", "Shankar Mahadevan", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Crazy kiya re (Dhoom)", "Sunidhi Chauhan", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Uska hi banana (1920)", "Arjit singh", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Ik Vaari Aa (Parindey)", "Shirley Setia", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Tum Itna Jo (Mtv Unlugged)", "Papon", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Channa ve (from Omkara)", "Akhil Sachdeva", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Tere Bin (Simba)", "Rahat Fateh Ali", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Khalibali (Padmavat)", "Shivam Pathak", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("sun le Zara (Singham)", "Arjit Singh", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Bulleya (Omkara)", "Papon", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Thodi Der (Half Girlfriend)", "Shreya Ghoshal", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Sajde (Singham returns)", "Arjit Singh", 00.00, 04.53, R.drawable.finaldesign),
+       new Song("Titli (Chennai Express)", "Gopi Sunder", 00.00, 04.53, R.drawable.finaldesign)
+       };
     }
 }

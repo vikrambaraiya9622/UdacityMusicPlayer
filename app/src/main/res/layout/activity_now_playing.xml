@@ -16,21 +16,22 @@
         android:id="@+id/nowplayingthumbnail"
         android:src="@drawable/finaldesign"
         />
+
     <TextView
+        android:id="@+id/nowplayingsongname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:text="Song name"
-        android:textAlignment="center"
-        android:id="@+id/nowplayingsongname"
         android:layout_margin="16dp"
-        android:textStyle="bold"
-        android:textSize="22sp"
         android:text="Song name of current song"
-        />
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail"
+        tools:text="Song name" />
+
     <ProgressBar
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -61,5 +62,57 @@
         app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
         android:id="@+id/nowplayinget"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnshuffle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_shuffle"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_back"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnplaypause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_play"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnnext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_next"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnrepeat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_repeat"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
