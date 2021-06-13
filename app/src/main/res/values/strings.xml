@@ -2,4 +2,5 @@
     <string name="app_name">Udacity Music Player</string>
     <string name="cancelButton">x</string>
     <string name="my_songs">MY Songs</string>
+    <string name="grid_view">Grid-View</string>
 </resources>

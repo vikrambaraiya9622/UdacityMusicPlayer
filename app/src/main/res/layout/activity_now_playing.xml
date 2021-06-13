@@ -7,16 +7,11 @@
     tools:context=".NowPlaying"
     android:background="@color/primarylight">
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.2"
+
+     style="@style/NowPlayingImageView"
         android:id="@+id/nowplayingthumbnail"
         android:src="@drawable/finaldesign"
-        android:scaleType="fitXY"
+
         />
 
     <TextView
