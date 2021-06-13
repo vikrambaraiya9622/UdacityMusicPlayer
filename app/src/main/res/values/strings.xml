@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Udacity Music Player</string>
     <string name="cancelButton">x</string>
+    <string name="my_songs">MY Songs</string>
 </resources>

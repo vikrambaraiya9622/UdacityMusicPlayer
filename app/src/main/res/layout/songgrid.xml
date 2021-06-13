@@ -8,39 +8,29 @@
     android:background="@color/primarylight">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+
         android:id="@+id/thumbnail"
-        android:scaleType="fitXY"/>
+        style="@style/GridImageView"
+       />
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Songname"
+       style="@style/GridSong"
         android:id="@+id/songname"
-        android:textColor="@color/white"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textStyle="bold"
-        android:textSize="18sp"
+
+
+
+
+
+
 
 
         />
 <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Singername"
+
+        style="@style/GridSinger"
         android:id="@+id/singername"
-    android:textColor="@color/white"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:ellipsize="end"
-    android:maxLines="1"
-android:textStyle="italic"
+
+
+
         />
 
 </LinearLayout>
