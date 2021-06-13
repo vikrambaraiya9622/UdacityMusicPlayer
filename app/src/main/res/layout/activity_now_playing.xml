@@ -16,19 +16,12 @@
 
     <TextView
         android:id="@+id/nowplayingsongname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Song name of current song"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:textStyle="bold"
+       style="@style/NowplayingSong"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail"
-        tools:text="Song name"
-        android:textColor="@color/white"/>
+
+       />
 
     <ProgressBar
         android:layout_marginLeft="16dp"
@@ -75,49 +68,43 @@
         >
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnshuffle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/buttonnowplayingactivity"
             app:icon="@drawable/ic_shuffle"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
+
+
             android:onClick="shufflesong"
             />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnback"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/buttonnowplayingactivity"
             app:icon="@drawable/ic_back"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
+
+
             android:onClick="backsong"
-            tools:ignore="OnClick" />
+           />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnplaypause"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
 
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/buttonnowplayingactivity"
+
             android:onClick="playpausesong"
             app:icon="@drawable/ic_play"
-            tools:ignore="OnClick" />
+           />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnnext"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/buttonnowplayingactivity"
             app:icon="@drawable/ic_next"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
+
+
             android:onClick="nextsong"
             />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnrepeat"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+           style="@style/buttonnowplayingactivity"
             app:icon="@drawable/ic_repeat"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_weight="1"
+
+
             android:onClick="repeatsong"
             />
 
