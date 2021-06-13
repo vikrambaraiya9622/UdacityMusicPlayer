@@ -3,4 +3,6 @@
     <string name="cancelButton">x</string>
     <string name="my_songs">MY Songs</string>
     <string name="grid_view">Grid-View</string>
+    <string name="_00_00">00:00</string>
+    <string name="_04_00">04:00</string>
 </resources>
