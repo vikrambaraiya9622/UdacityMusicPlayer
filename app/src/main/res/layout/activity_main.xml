@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     tools:context=".MainActivity"
-    style="@style/rootview">
+    style="@style/rootview"
+    android:background="@color/primarymedium">
     <TextView
        style="@style/Title"
         android:text="@string/my_songs"
