@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/rootview">
+    style="@style/rootview"
+    android:orientation="vertical">
 
     <ImageView
 
         android:id="@+id/thumbnail"
-        style="@style/GridImageView"
-       />
+        style="@style/GridImageView" />
+
     <TextView
-       style="@style/GridSong"
         android:id="@+id/songname"
-
-
-
-
-
-
+        style="@style/GridSong"
 
 
         />
-<TextView
 
-        style="@style/GridSinger"
+    <TextView
+
         android:id="@+id/singername"
-
+        style="@style/GridSinger"
 
 
         />

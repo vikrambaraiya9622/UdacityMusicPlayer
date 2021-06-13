@@ -1,74 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    tools:context=".MainActivity"
     style="@style/rootview"
-    android:background="@color/primarymedium">
+    android:background="@color/primarymedium"
+    tools:context=".MainActivity">
+
     <TextView
-       style="@style/Title"
+        android:id="@+id/mysongs"
+        style="@style/Title"
+
         android:text="@string/my_songs"
 
-        android:id="@+id/mysongs"
+        />
+
+    <Switch
+        android:id="@+id/switchstate"
+
+        style="@style/switchview"
+        android:text="@string/grid_view"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <ListView
+
+        android:id="@+id/songlistview"
+        style="@style/containerViewForSongs"
 
         />
-<Switch
-    android:id="@+id/switchstate"
 
-    android:text="@string/grid_view"
-   style="@style/switchview"
-    tools:ignore="UseSwitchCompatOrMaterialXml" />
-   <ListView
-
-       android:id="@+id/songlistview"
-       style="@style/containerViewForSongs"
-
-         />
     <GridView
 
         android:id="@+id/songsGridView"
-        android:numColumns="2"
         style="@style/containerViewForSongs"
-        />
+        android:numColumns="2" />
+
     <LinearLayout
 
         android:id="@+id/nowplayingfooter"
         style="@style/nowPlayingFooter"
 
 
-
-
-
-
         >
+
         <ImageView
-           style="@style/smallImageThumbnail"
+            style="@style/smallImageThumbnail"
             android:src="@drawable/finaldesign"
 
             />
+
         <LinearLayout
 
-            style="@style/SongAndSingerNameContainer"
-            >
+            style="@style/SongAndSingerNameContainer">
+
             <TextView
 
-               android:id="@+id/footersongname"
+                android:id="@+id/footersongname"
                 style="@style/songname"
 
                 />
+
             <TextView
 
                 android:id="@+id/footersinger"
-               style="@style/singername"
-                />
+                style="@style/singername" />
         </LinearLayout>
+
         <Button
 
-style="@style/cancelButton"
-        android:text="@string/cancelButton"
             android:id="@+id/stopcurrentsong"
+            style="@style/cancelButton"
             android:onClick="stopcurrentplayingsong"
+            android:text="@string/cancelButton"
 
             />
 

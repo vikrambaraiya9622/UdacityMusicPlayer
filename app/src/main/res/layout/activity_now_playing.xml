@@ -3,79 +3,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    tools:context=".NowPlaying"
     style="@style/rootview"
- >
+    tools:context=".NowPlaying">
+
     <ImageView
 
-     style="@style/NowPlayingImageView"
         android:id="@+id/nowplayingthumbnail"
+        style="@style/NowPlayingImageView"
         android:src="@drawable/finaldesign"
 
         />
 
     <TextView
         android:id="@+id/nowplayingsongname"
-       style="@style/NowplayingSong"
+        style="@style/NowplayingSong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail"
 
-       />
+        />
 
     <ProgressBar
 
 
-        app:layout_constraintTop_toBottomOf="@id/nowplayingsongname"
         android:id="@+id/nowplayingprogressbar"
+        style="@style/nowplayingprogressbar"
         app:layout_constraintStart_toStartOf="parent"
-       style="@style/nowplayingprogressbar"
+        app:layout_constraintTop_toBottomOf="@id/nowplayingsongname"
 
         />
 
     <TextView
 
-        app:layout_constraintStart_toStartOf="@id/nowplayingprogressbar"
-
-        android:text="@string/_00_00"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
         android:id="@+id/nowplayingst"
-  style="@style/timer"
-        />
+
+        style="@style/timer"
+        android:text="@string/_00_00"
+        app:layout_constraintStart_toStartOf="@id/nowplayingprogressbar"
+        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar" />
+
     <TextView
 
 
-        app:layout_constraintEnd_toEndOf="@id/nowplayingprogressbar"
-  style="@style/timer"
-        android:text="@string/_04_00"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
         android:id="@+id/nowplayinget"
+        style="@style/timer"
+        android:text="@string/_04_00"
+        app:layout_constraintEnd_toEndOf="@id/nowplayingprogressbar"
+        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
 
         />
+
     <LinearLayout
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
+        style="@style/nowplayingbuttoncontainer"
         app:layout_constraintBottom_toBottomOf="parent"
-   style="@style/nowplayingbuttoncontainer"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar">
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnshuffle"
             style="@style/buttonnowplayingactivity"
-            app:icon="@drawable/ic_shuffle"
-
-
             android:onClick="shufflesong"
-            />
+
+
+            app:icon="@drawable/ic_shuffle" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnback"
             style="@style/buttonnowplayingactivity"
-            app:icon="@drawable/ic_back"
-
-
             android:onClick="backsong"
-           />
+
+
+            app:icon="@drawable/ic_back" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnplaypause"
@@ -83,24 +83,23 @@
             style="@style/buttonnowplayingactivity"
 
             android:onClick="playpausesong"
-            app:icon="@drawable/ic_play"
-           />
+            app:icon="@drawable/ic_play" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnnext"
             style="@style/buttonnowplayingactivity"
-            app:icon="@drawable/ic_next"
-
-
             android:onClick="nextsong"
-            />
+
+
+            app:icon="@drawable/ic_next" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnrepeat"
-           style="@style/buttonnowplayingactivity"
-            app:icon="@drawable/ic_repeat"
-
-
+            style="@style/buttonnowplayingactivity"
             android:onClick="repeatsong"
-            />
+
+
+            app:icon="@drawable/ic_repeat" />
 
     </LinearLayout>
 

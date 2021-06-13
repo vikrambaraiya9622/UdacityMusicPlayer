@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
 
-    android:orientation="horizontal"
+    style="@style/rootview"
     android:layout_margin="8dp"
-   style="@style/rootview">
+    android:orientation="horizontal">
+
     <ImageView
-       style="@style/smallImageThumbnail"
         android:id="@+id/songthumbnail"
+        style="@style/smallImageThumbnail"
 
         />
-    <LinearLayout
-        style="@style/SongAndSingerNameContainer"
+
+    <LinearLayout style="@style/SongAndSingerNameContainer"
 
         >
+
         <TextView
-          style="@style/songname"
-          android:id="@+id/songname"
-            />
+            android:id="@+id/songname"
+            style="@style/songname" />
+
         <TextView
-           style="@style/singername"
             android:id="@+id/singername"
+            style="@style/singername"
 
 
             />
