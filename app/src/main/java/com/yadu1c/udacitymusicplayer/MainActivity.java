@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -31,15 +32,19 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         if (nowplaying==true)
         {
-            LinearLayout ll=findViewById(R.id.nowplayingfooter);
-            ll.setVisibility(View.VISIBLE);
-            TextView footertv=findViewById(R.id.footersongname);
-            footertv.setText(songs[currentsong].getmName());
-            TextView footersingertv=findViewById(R.id.footersinger);
-            footersingertv.setText(songs[currentsong].getmSinger());
+            displaynowplayingfooter();
 
         }
-        Toast.makeText(this,""+nowplaying,Toast.LENGTH_LONG).show();
+
+    }
+
+    private void displaynowplayingfooter() {
+        LinearLayout ll=findViewById(R.id.nowplayingfooter);
+        ll.setVisibility(View.VISIBLE);
+        TextView footertv=findViewById(R.id.footersongname);
+        footertv.setText(songs[currentsong].getmName());
+        TextView footersingertv=findViewById(R.id.footersinger);
+        footersingertv.setText(songs[currentsong].getmSinger());
     }
 
     @Override
@@ -62,6 +67,13 @@ public class MainActivity extends AppCompatActivity {
         changeview.setChecked(false);
         songlistview.setVisibility(View.VISIBLE);
         songsGridview.setVisibility(View.INVISIBLE);
+        Button cancelNowPlayingSong=findViewById(R.id.stopcurrentsong);
+        cancelNowPlayingSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopcurrentplayingsong();
+            }
+        });
 
         songlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -92,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     songlistview.setVisibility(View.VISIBLE);
                     songsGridview.setVisibility(View.INVISIBLE);
-                  //  songlistview.setOnItemClickListener((adapterView, view, i, l) -> );
+
 
                 }
                 });
@@ -124,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
        };
     }
 
-    public void stopcurrentplayingsong(View view) {
+    public void stopcurrentplayingsong() {
         LinearLayout ll=findViewById(R.id.nowplayingfooter);
         ll.setVisibility(View.INVISIBLE);
     }
