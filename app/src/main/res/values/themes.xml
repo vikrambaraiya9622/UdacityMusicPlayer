@@ -181,6 +181,13 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="rootview" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/primarymedium</item>
+
+    </style>
+
 
 
 </resources>
