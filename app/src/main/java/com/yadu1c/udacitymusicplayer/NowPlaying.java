@@ -49,7 +49,6 @@ public class NowPlaying extends AppCompatActivity {
 
 
         String songname=songobj.getmName();
-      //  String singername=songobj.getmSinger();
         int thumbnail=songobj.getmThumbnail();
         double starttime=songobj.getmStartTime();
         double endttime=songobj.getmEndTime();
@@ -93,18 +92,18 @@ public class NowPlaying extends AppCompatActivity {
 
     public void playpausesong() {
         if(playing){
-            //pause
+
             MaterialButton playbtn=findViewById(R.id.btnplaypause);
             playbtn.setIcon(getResources().getDrawable(R.drawable.ic_pause));
             playing=false;
-            //stop progress bar
+           //stop progress bar
 
         } else {
-            //pause
+
             MaterialButton playbtn=findViewById(R.id.btnplaypause);
             playbtn.setIcon(getResources().getDrawable(R.drawable.ic_play));
             playing=true;
-            //resume progress bar
+
 
         }
     }
@@ -130,7 +129,7 @@ public class NowPlaying extends AppCompatActivity {
     }
 
     public void shufflesong() {
-        //shuffle=true;
+
         repeat=false;
         Button repeatbtn=findViewById(R.id.btnrepeat);
         repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
@@ -151,7 +150,7 @@ public class NowPlaying extends AppCompatActivity {
     }
 
     public void repeatsong() {
-        //repeat=true;
+
         shuffle=false;
         shuffle=false;
         Button shufflebtn=findViewById(R.id.btnshuffle);
