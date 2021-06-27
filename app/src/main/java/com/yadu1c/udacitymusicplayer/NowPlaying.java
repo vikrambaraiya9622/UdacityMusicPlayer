@@ -51,8 +51,6 @@ public class NowPlaying extends AppCompatActivity {
 
 
     public void backsong() {
-
-
         if(shuffle){
             Random randomNumber=new Random();
             int size=MainActivity.songs.length;
@@ -71,25 +69,17 @@ public class NowPlaying extends AppCompatActivity {
             updateplayingsong( MainActivity.currentSong);
         }
     }
-
     public void playpausesong() {
         if(playing){
-
             MaterialButton playbtn=findViewById(R.id.btnplaypause);
             playbtn.setIcon(getResources().getDrawable(R.drawable.ic_pause));
             playing=false;
-           //stop progress bar
-
         } else {
-
             MaterialButton playbtn=findViewById(R.id.btnplaypause);
             playbtn.setIcon(getResources().getDrawable(R.drawable.ic_play));
             playing=true;
-
-
         }
     }
-
     public void nextsong() {
         if(shuffle){
             Random randomNumber=new Random();
@@ -109,48 +99,35 @@ public class NowPlaying extends AppCompatActivity {
             updateplayingsong(MainActivity.currentSong);
         }
     }
-
     public void shufflesong() {
-
         repeat=false;
         Button repeatbtn=findViewById(R.id.btnrepeat);
         repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
         Button shufflebtn=findViewById(R.id.btnshuffle);
         if(!shuffle){
-
             shuffle=true;
             shufflebtn.setBackgroundColor(getResources().getColor(R.color.white));
         }
         else
         {
-
             shuffle=false;
             shufflebtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
-
         }
-
     }
-
     public void repeatsong() {
-
         shuffle=false;
         shuffle=false;
         Button shufflebtn=findViewById(R.id.btnshuffle);
         shufflebtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
-
         Button repeatbtn=findViewById(R.id.btnrepeat);
         if(!repeat){
-
             repeat=true;
             repeatbtn.setBackgroundColor(getResources().getColor(R.color.white));
         }
         else
         {
-
             repeat=false;
             repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
-
         }
-
     }
 }
