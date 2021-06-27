@@ -53,27 +53,27 @@
         app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnshuffle"
+            android:id="@+id/btnShuffle"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
             app:icon="@drawable/ic_shuffle" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnback"
+            android:id="@+id/btnBack"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
             app:icon="@drawable/ic_back" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnplaypause"
+            android:id="@+id/btnPlayPause"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
             app:icon="@drawable/ic_play" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnnext"
+            android:id="@+id/btnNext"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
             app:icon="@drawable/ic_next" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnrepeat"
+            android:id="@+id/btnRepeat"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
             app:icon="@drawable/ic_repeat" />
     </LinearLayout>

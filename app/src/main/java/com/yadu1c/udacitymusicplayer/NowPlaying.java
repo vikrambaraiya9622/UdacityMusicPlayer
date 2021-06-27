@@ -14,120 +14,120 @@ import com.yadu1c.udacitymusicplayer.Model.Song;
 import java.util.Random;
 
 public class NowPlaying extends AppCompatActivity {
-    private Boolean shuffle = false;
-    private Boolean repeat = false;
-    private Boolean playing = true;
+    private Boolean shuffleFlag = false;
+    private Boolean repeatFlag = false;
+    private Boolean playingFlag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
-        updateplayingsong(MainActivity.currentSong);
-        Button backbtn = findViewById(R.id.btnback);
-        Button nextbtn = findViewById(R.id.btnnext);
-        Button shufflebtn = findViewById(R.id.btnshuffle);
-        Button repeatbtn = findViewById(R.id.btnrepeat);
-        Button playpausebtn = findViewById(R.id.btnplaypause);
-        backbtn.setOnClickListener(view -> backsong());
-        nextbtn.setOnClickListener(view -> nextsong());
-        repeatbtn.setOnClickListener(view -> repeatsong());
-        shufflebtn.setOnClickListener(view -> shufflesong());
-        playpausebtn.setOnClickListener(view -> playpausesong());
+        updatePlayingSong(MainActivity.currentSong);
+        Button backBtn = findViewById(R.id.btnBack);
+        Button nextBtn = findViewById(R.id.btnNext);
+        Button shuffleBtn = findViewById(R.id.btnShuffle);
+        Button repeatBtn = findViewById(R.id.btnRepeat);
+        Button playPauseBtn = findViewById(R.id.btnPlayPause);
+        backBtn.setOnClickListener(view -> backSong());
+        nextBtn.setOnClickListener(view -> nextSong());
+        repeatBtn.setOnClickListener(view -> repeatSong());
+        shuffleBtn.setOnClickListener(view -> shuffleSong());
+        playPauseBtn.setOnClickListener(view -> playPauseSong());
     }
 
     @SuppressLint("SetTextI18n")
-    private void updateplayingsong(int currentSong) {
-        Song songobj = MainActivity.songs[currentSong];
-        String songname = songobj.getmName();
-        int thumbnail = songobj.getmThumbnail();
-        double starttime = songobj.getmStartTime();
-        double endttime = songobj.getmEndTime();
-        TextView songnametv = findViewById(R.id.nowplayingsongname);
-        TextView sttv = findViewById(R.id.nowplayingst);
-        TextView ettv = findViewById(R.id.nowplayinget);
-        ImageView thumbnailimg = findViewById(R.id.nowplayingthumbnail);
-        songnametv.setText(songname);
-        thumbnailimg.setImageResource(thumbnail);
-        sttv.setText("" + starttime);
-        ettv.setText("" + endttime);
+    private void updatePlayingSong(int currentSong) {
+        Song songObj = MainActivity.songs[currentSong];
+        String songName = songObj.getmName();
+        int thumbnail = songObj.getmThumbnail();
+        double startTime = songObj.getmStartTime();
+        double endTime = songObj.getmEndTime();
+        TextView songNameTV = findViewById(R.id.nowplayingsongname);
+        TextView startTimeTV = findViewById(R.id.nowplayingst);
+        TextView endTimeTV = findViewById(R.id.nowplayinget);
+        ImageView thumbnailImg = findViewById(R.id.nowplayingthumbnail);
+        songNameTV.setText(songName);
+        thumbnailImg.setImageResource(thumbnail);
+        startTimeTV.setText("" + startTime);
+        endTimeTV.setText("" + endTime);
         MainActivity.nowPlayingFooterFlag = true;
     }
 
 
-    public void backsong() {
-        if (shuffle) {
+    public void backSong() {
+        if (shuffleFlag) {
             Random randomNumber = new Random();
             int size = MainActivity.songs.length;
-            int shufflesong = randomNumber.nextInt(size);
-            updateplayingsong(shufflesong);
-        } else if (repeat) {
-            updateplayingsong(MainActivity.currentSong);
+            int shuffleSong = randomNumber.nextInt(size);
+            updatePlayingSong(shuffleSong);
+        } else if (repeatFlag) {
+            updatePlayingSong(MainActivity.currentSong);
         } else {
             if (MainActivity.currentSong > 0) {
                 MainActivity.currentSong -= 1;
             } else
                 MainActivity.currentSong = MainActivity.songs.length - 1;
-            updateplayingsong(MainActivity.currentSong);
+            updatePlayingSong(MainActivity.currentSong);
         }
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    public void playpausesong() {
-        if (playing) {
-            MaterialButton playbtn = findViewById(R.id.btnplaypause);
-            playbtn.setIcon(getResources().getDrawable(R.drawable.ic_pause));
-            playing = false;
+    public void playPauseSong() {
+        if (playingFlag) {
+            MaterialButton playPauseBtn = findViewById(R.id.btnPlayPause);
+            playPauseBtn.setIcon(getResources().getDrawable(R.drawable.ic_pause));
+            playingFlag = false;
         } else {
-            MaterialButton playbtn = findViewById(R.id.btnplaypause);
-            playbtn.setIcon(getResources().getDrawable(R.drawable.ic_play));
-            playing = true;
+            MaterialButton playPauseBtn = findViewById(R.id.btnPlayPause);
+            playPauseBtn.setIcon(getResources().getDrawable(R.drawable.ic_play));
+            playingFlag = true;
         }
     }
 
-    public void nextsong() {
-        if (shuffle) {
+    public void nextSong() {
+        if (shuffleFlag) {
             Random randomNumber = new Random();
             int size = MainActivity.songs.length;
-            int shufflesong = randomNumber.nextInt(size);
-            updateplayingsong(shufflesong);
-        } else if (repeat) {
-            updateplayingsong(MainActivity.currentSong);
+            int shuffleSong = randomNumber.nextInt(size);
+            updatePlayingSong(shuffleSong);
+        } else if (repeatFlag) {
+            updatePlayingSong(MainActivity.currentSong);
         } else {
             if (MainActivity.currentSong < MainActivity.songs.length - 1) {
                 MainActivity.currentSong += 1;
             } else {
                 MainActivity.currentSong = 0;
             }
-            updateplayingsong(MainActivity.currentSong);
+            updatePlayingSong(MainActivity.currentSong);
         }
     }
 
-    public void shufflesong() {
-        repeat = false;
-        Button repeatbtn = findViewById(R.id.btnrepeat);
-        repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
-        Button shufflebtn = findViewById(R.id.btnshuffle);
-        if (!shuffle) {
-            shuffle = true;
-            shufflebtn.setBackgroundColor(getResources().getColor(R.color.white));
+    public void shuffleSong() {
+        repeatFlag = false;
+        Button repeatBtn = findViewById(R.id.btnRepeat);
+        repeatBtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+        Button shuffleBtn = findViewById(R.id.btnShuffle);
+        if (!shuffleFlag) {
+            shuffleFlag = true;
+            shuffleBtn.setBackgroundColor(getResources().getColor(R.color.white));
         } else {
-            shuffle = false;
-            shufflebtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+            shuffleFlag = false;
+            shuffleBtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
         }
     }
 
-    public void repeatsong() {
-        shuffle = false;
-        shuffle = false;
-        Button shufflebtn = findViewById(R.id.btnshuffle);
-        shufflebtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
-        Button repeatbtn = findViewById(R.id.btnrepeat);
-        if (!repeat) {
-            repeat = true;
-            repeatbtn.setBackgroundColor(getResources().getColor(R.color.white));
+    public void repeatSong() {
+        shuffleFlag = false;
+        shuffleFlag = false;
+        Button shuffleBtn = findViewById(R.id.btnShuffle);
+        shuffleBtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+        Button repeatBtn = findViewById(R.id.btnRepeat);
+        if (!repeatFlag) {
+            repeatFlag = true;
+            repeatBtn.setBackgroundColor(getResources().getColor(R.color.white));
         } else {
-            repeat = false;
-            repeatbtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
+            repeatFlag = false;
+            repeatBtn.setBackgroundColor(getResources().getColor(R.color.primarylight));
         }
     }
 }
