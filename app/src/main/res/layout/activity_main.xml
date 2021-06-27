@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
     style="@style/rootview"
     android:background="@color/primarymedium"
     tools:context=".MainActivity">
@@ -9,69 +8,46 @@
     <TextView
         android:id="@+id/mysongs"
         style="@style/Title"
-
-        android:text="@string/my_songs"
-
-        />
+        android:text="@string/my_songs" />
 
     <Switch
         android:id="@+id/switchState"
-
         style="@style/switchview"
         android:text="@string/grid_view"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <ListView
-
         android:id="@+id/songsListViewLayout"
-        style="@style/containerViewForSongs"
-
-        />
+        style="@style/containerViewForSongs" />
 
     <GridView
-
         android:id="@+id/songsGridViewLayout"
         style="@style/containerViewForSongs"
         android:numColumns="2" />
 
     <LinearLayout
-
         android:id="@+id/nowPlayingFooterLayout"
-        style="@style/nowPlayingFooter"
-
-
-        >
+        style="@style/nowPlayingFooter">
 
         <ImageView
-            style="@style/smallImageThumbnail"
             android:id="@+id/nowPlayingFooterThumbnail"
+            style="@style/smallImageThumbnail"
             android:contentDescription="@string/thumbnailcd" />
 
-        <LinearLayout
-
-            style="@style/SongAndSingerNameContainer">
+        <LinearLayout style="@style/SongAndSingerNameContainer">
 
             <TextView
-
                 android:id="@+id/noPlayingFooterSongName"
-                style="@style/songname"
-
-                />
+                style="@style/songname" />
 
             <TextView
-
                 android:id="@+id/nowPlayingFooterSingerName"
                 style="@style/singername" />
         </LinearLayout>
 
         <Button
-
             android:id="@+id/stopFooterSong"
             style="@style/cancelButton"
-            android:text="@string/cancelButton"
-
-            />
-
-
+            android:text="@string/cancelButton" />
     </LinearLayout>
 </RelativeLayout>
