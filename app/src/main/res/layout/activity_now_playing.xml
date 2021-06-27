@@ -7,10 +7,13 @@
     tools:context=".NowPlaying">
 
     <ImageView
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/nowplayingthumbnail"
         style="@style/NowPlayingImageView"
-        android:src="@drawable/finaldesign"
+
 
         />
 
@@ -25,11 +28,16 @@
 
     <ProgressBar
 
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:id="@+id/nowplayingprogressbar"
-        style="@style/nowplayingprogressbar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nowplayingsongname"
+
 
         />
 
@@ -63,16 +71,15 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnshuffle"
-            style="@style/buttonnowplayingactivity"
-            android:onClick="shufflesong"
+            style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
 
 
             app:icon="@drawable/ic_shuffle" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnback"
-            style="@style/buttonnowplayingactivity"
-            android:onClick="backsong"
+            style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
+
 
 
             app:icon="@drawable/ic_back" />
@@ -80,23 +87,23 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnplaypause"
 
-            style="@style/buttonnowplayingactivity"
+            style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
 
-            android:onClick="playpausesong"
+
             app:icon="@drawable/ic_play" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnnext"
-            style="@style/buttonnowplayingactivity"
-            android:onClick="nextsong"
+            style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
+
 
 
             app:icon="@drawable/ic_next" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnrepeat"
-            style="@style/buttonnowplayingactivity"
-            android:onClick="repeatsong"
+            style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
+
 
 
             app:icon="@drawable/ic_repeat" />

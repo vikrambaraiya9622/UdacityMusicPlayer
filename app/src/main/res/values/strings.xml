@@ -5,4 +5,5 @@
     <string name="grid_view">Grid-View</string>
     <string name="_00_00">00:00</string>
     <string name="_04_00">04:00</string>
+    <string name="thumbnailcd">thumbnailCD</string>
 </resources>

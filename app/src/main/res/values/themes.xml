@@ -89,10 +89,7 @@
 <style name="NowPlayingImageView" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">300dp</item>
-    <item name="layout_constraintTop_toTopOf">parent</item>
-    <item name="layout_constraintBottom_toBottomOf">parent</item>
-    <item name="layout_constraintStart_toStartOf">parent</item>
-    <item name="layout_constraintEnd_toEndOf">parent</item>
+
     <item name="layout_constraintVertical_bias">0.2</item>
 
         <item name="android:scaleType">fitXY</item>
@@ -120,6 +117,7 @@
     <item name="android:layout_margin">16dp</item>
     <item name="android:textAlignment">center</item>
 </style>
+
 
 <style name="GridSinger" parent="Theme.AppCompat.DayNight.DarkActionBar">
     <item name="android:layout_width">match_parent</item>
@@ -150,12 +148,14 @@
     <item name="android:layout_alignParentEnd">true</item>
 <item name="android:layout_margin">8dp</item>
 </style>
-    <style name="buttonnowplayingactivity" parent="Theme.AppCompat.DayNight.DarkActionBar">
-    <item name="android:layout_width">0dp</item>
+
+    <style name="Themeoverlay.MaterialComponents.Button.OutlinedButton" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="android:layout_height">wrap_content</item>
-        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@color/primarylight</item>
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/primarylight</item>
+        <item name="materialThemeOverlay">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
+
     </style>
 
     <style name="nowplayingbuttoncontainer" parent="Theme.AppCompat.DayNight.DarkActionBar">
@@ -165,15 +165,12 @@
         <item name="android:layout_margin">16dp</item>
     </style>
 
-    <style name="nowplayingprogressbar" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="progressBarStyle">@style/Widget.AppCompat.ProgressBar.Horizontal</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
 
-    </style>
+
+
+
+
+
 
     <style name="timer" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="android:layout_width">wrap_content</item>

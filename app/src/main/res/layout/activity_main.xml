@@ -44,9 +44,8 @@
 
         <ImageView
             style="@style/smallImageThumbnail"
-            android:src="@drawable/finaldesign"
-
-            />
+            android:id="@+id/currentThumbnail"
+            android:contentDescription="@string/thumbnailcd" />
 
         <LinearLayout
 
@@ -69,7 +68,6 @@
 
             android:id="@+id/stopcurrentsong"
             style="@style/cancelButton"
-            android:onClick="stopcurrentplayingsong"
             android:text="@string/cancelButton"
 
             />

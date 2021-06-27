@@ -2,15 +2,11 @@ package com.yadu1c.udacitymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.yadu1c.udacitymusicplayer.Model.Song;
@@ -18,11 +14,9 @@ import com.yadu1c.udacitymusicplayer.Model.Song;
 import java.util.Random;
 
 public class NowPlaying extends AppCompatActivity {
-    Boolean shuffle=false;
-    Boolean repeat=false;
-    Boolean playing=true;
-    Boolean shufflesong=false;
-    Boolean repeatsong=false;
+   private  Boolean shuffle=false;
+    private Boolean repeat=false;
+    private Boolean playing=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +25,22 @@ public class NowPlaying extends AppCompatActivity {
 
         Button backbtn=findViewById(R.id.btnback);
         Button nextbtn=findViewById(R.id.btnnext);
+        Button shufflebtn=findViewById(R.id.btnshuffle);
+        Button repeatbtn=findViewById(R.id.btnrepeat);
+        Button playpausebtn=findViewById(R.id.btnplaypause);
+
+        backbtn.setOnClickListener(view -> backsong());
+
+        nextbtn.setOnClickListener(view -> nextsong());
+
+        repeatbtn.setOnClickListener(view -> repeatsong());
+        shufflebtn.setOnClickListener(view -> shufflesong());
+        playpausebtn.setOnClickListener(view -> playpausesong());
 
 
 
-//
+
+
 
     }
 
@@ -43,7 +49,7 @@ public class NowPlaying extends AppCompatActivity {
 
 
         String songname=songobj.getmName();
-        String singername=songobj.getmSinger();
+      //  String singername=songobj.getmSinger();
         int thumbnail=songobj.getmThumbnail();
         double starttime=songobj.getmStartTime();
         double endttime=songobj.getmEndTime();
@@ -63,7 +69,7 @@ public class NowPlaying extends AppCompatActivity {
     }
 
 
-    public void backsong(View view) {
+    public void backsong() {
 
 
         if(shuffle){
@@ -85,7 +91,7 @@ public class NowPlaying extends AppCompatActivity {
         }
     }
 
-    public void playpausesong(View view) {
+    public void playpausesong() {
         if(playing){
             //pause
             MaterialButton playbtn=findViewById(R.id.btnplaypause);
@@ -97,12 +103,13 @@ public class NowPlaying extends AppCompatActivity {
             //pause
             MaterialButton playbtn=findViewById(R.id.btnplaypause);
             playbtn.setIcon(getResources().getDrawable(R.drawable.ic_play));
+            playing=true;
             //resume progress bar
 
         }
     }
 
-    public void nextsong(View view) {
+    public void nextsong() {
         if(shuffle){
             Random randomNumber=new Random();
             int size=MainActivity.songs.length;
@@ -122,7 +129,7 @@ public class NowPlaying extends AppCompatActivity {
         }
     }
 
-    public void shufflesong(View view) {
+    public void shufflesong() {
         //shuffle=true;
         repeat=false;
         Button repeatbtn=findViewById(R.id.btnrepeat);
@@ -143,7 +150,7 @@ public class NowPlaying extends AppCompatActivity {
 
     }
 
-    public void repeatsong(View view) {
+    public void repeatsong() {
         //repeat=true;
         shuffle=false;
         shuffle=false;
@@ -166,4 +173,3 @@ public class NowPlaying extends AppCompatActivity {
 
     }
 }
-//oncomplete check if repeat or shiffle on
