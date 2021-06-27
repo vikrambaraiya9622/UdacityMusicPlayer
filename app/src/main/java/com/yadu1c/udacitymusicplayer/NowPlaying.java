@@ -2,8 +2,8 @@ package com.yadu1c.udacitymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +21,7 @@ public class NowPlaying extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
-        updateplayingsong(MainActivity.currentsong);
+        updateplayingsong(MainActivity.currentSong);
 
         Button backbtn=findViewById(R.id.btnback);
         Button nextbtn=findViewById(R.id.btnnext);
@@ -44,6 +44,7 @@ public class NowPlaying extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateplayingsong(int currentSong) {
         Song songobj= MainActivity.songs[currentSong];
 
@@ -64,7 +65,7 @@ public class NowPlaying extends AppCompatActivity {
 
         sttv.setText(""+starttime);
         ettv.setText(""+endttime);
-        MainActivity.nowplaying=true;
+        MainActivity.nowPlayingFooterFlag =true;
     }
 
 
@@ -78,15 +79,15 @@ public class NowPlaying extends AppCompatActivity {
             updateplayingsong(shufflesong);
         }
         else if(repeat){
-            updateplayingsong(MainActivity.currentsong);
+            updateplayingsong(MainActivity.currentSong);
         }
         else{
-            if(MainActivity.currentsong>0){
-                MainActivity.currentsong -=1;
+            if(MainActivity.currentSong >0){
+                MainActivity.currentSong -=1;
             }
             else
-                MainActivity.currentsong=MainActivity.songs.length-1;
-            updateplayingsong( MainActivity.currentsong);
+                MainActivity.currentSong =MainActivity.songs.length-1;
+            updateplayingsong( MainActivity.currentSong);
         }
     }
 
@@ -116,15 +117,15 @@ public class NowPlaying extends AppCompatActivity {
             updateplayingsong(shufflesong);
         }
         else if(repeat){
-            updateplayingsong(MainActivity.currentsong);
+            updateplayingsong(MainActivity.currentSong);
         }
         else {
-            if(MainActivity.currentsong<MainActivity.songs.length-1){
-                MainActivity.currentsong+=1;
+            if(MainActivity.currentSong <MainActivity.songs.length-1){
+                MainActivity.currentSong +=1;
             }
             else{
-                MainActivity.currentsong=0;}
-            updateplayingsong(MainActivity.currentsong);
+                MainActivity.currentSong =0;}
+            updateplayingsong(MainActivity.currentSong);
         }
     }
 

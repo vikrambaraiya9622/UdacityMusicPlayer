@@ -15,7 +15,7 @@
         />
 
     <Switch
-        android:id="@+id/switchstate"
+        android:id="@+id/switchState"
 
         style="@style/switchview"
         android:text="@string/grid_view"
@@ -23,20 +23,20 @@
 
     <ListView
 
-        android:id="@+id/songlistview"
+        android:id="@+id/songsListViewLayout"
         style="@style/containerViewForSongs"
 
         />
 
     <GridView
 
-        android:id="@+id/songsGridView"
+        android:id="@+id/songsGridViewLayout"
         style="@style/containerViewForSongs"
         android:numColumns="2" />
 
     <LinearLayout
 
-        android:id="@+id/nowplayingfooter"
+        android:id="@+id/nowPlayingFooterLayout"
         style="@style/nowPlayingFooter"
 
 
@@ -44,7 +44,7 @@
 
         <ImageView
             style="@style/smallImageThumbnail"
-            android:id="@+id/currentThumbnail"
+            android:id="@+id/nowPlayingFooterThumbnail"
             android:contentDescription="@string/thumbnailcd" />
 
         <LinearLayout
@@ -53,20 +53,20 @@
 
             <TextView
 
-                android:id="@+id/footersongname"
+                android:id="@+id/noPlayingFooterSongName"
                 style="@style/songname"
 
                 />
 
             <TextView
 
-                android:id="@+id/footersinger"
+                android:id="@+id/nowPlayingFooterSingerName"
                 style="@style/singername" />
         </LinearLayout>
 
         <Button
 
-            android:id="@+id/stopcurrentsong"
+            android:id="@+id/stopFooterSong"
             style="@style/cancelButton"
             android:text="@string/cancelButton"
 
