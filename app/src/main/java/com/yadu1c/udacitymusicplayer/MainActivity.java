@@ -1,14 +1,10 @@
 package com.yadu1c.udacitymusicplayer;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -16,15 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-
-
 import com.yadu1c.udacitymusicplayer.Adapter.SongApapter;
 import com.yadu1c.udacitymusicplayer.Adapter.SongGridViewAdapter;
 import com.yadu1c.udacitymusicplayer.Model.Song;
-
 import java.util.Arrays;
-
-
 public class MainActivity extends AppCompatActivity {
   static boolean nowplaying=false;
     static Song[] songs;
@@ -35,11 +26,8 @@ public class MainActivity extends AppCompatActivity {
         if (nowplaying)
         {
             displaynowplayingfooter();
-
         }
-
     }
-
     private void displaynowplayingfooter() {
         LinearLayout ll=findViewById(R.id.nowplayingfooter);
         ll.setVisibility(View.VISIBLE);
@@ -49,43 +37,32 @@ public class MainActivity extends AppCompatActivity {
         footersingertv.setText(songs[currentsong].getmSinger());
         ImageView thumbnail=findViewById(R.id.currentThumbnail);
         int thumbnailImg=songs[currentsong].getmThumbnail();
-
         thumbnail.setImageResource(thumbnailImg);
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Context context=getApplicationContext();
-
         @SuppressLint("UseSwitchCompatOrMaterialCode") Switch changeview=findViewById(R.id.switchstate);
-
         updatePlaylist();
-
         SongApapter songsadapter=new SongApapter(this, Arrays.asList(songs));
         ListView songlistview=findViewById(R.id.songlistview);
         songlistview.setAdapter(songsadapter);
-
         SongGridViewAdapter songsgridadapter=new SongGridViewAdapter(this,Arrays.asList(songs));
         GridView songsGridview=findViewById(R.id.songsGridView);
         songsGridview.setAdapter(songsgridadapter);
-
         changeview.setChecked(false);
         songlistview.setVisibility(View.VISIBLE);
         songsGridview.setVisibility(View.INVISIBLE);
         Button cancelNowPlayingSong=findViewById(R.id.stopcurrentsong);
         cancelNowPlayingSong.setOnClickListener(view -> stopcurrentplayingsong());
-
         songlistview.setOnItemClickListener((parent, view, position, id) -> {
-
             Intent intent=new Intent(context ,NowPlaying.class);
             currentsong=position;
             startActivity(intent);
-
         });
         songsGridview.setOnItemClickListener((adapterView, view, i, l) -> {
-
             Intent intent=new Intent(context ,NowPlaying.class);
             currentsong=i;
             startActivity(intent);
@@ -94,20 +71,13 @@ public class MainActivity extends AppCompatActivity {
                 if (b){
                     songlistview.setVisibility(View.INVISIBLE);
                     songsGridview.setVisibility(View.VISIBLE);
-
-
                 }else
                 {
                     songlistview.setVisibility(View.VISIBLE);
                     songsGridview.setVisibility(View.INVISIBLE);
-
-
                 }
                 });
-
-
     }
-
     private void updatePlaylist() {
         songs = new Song[]{ new Song("Beedi (from Omkara)", "Monty Sharma", 00.00, 04.53, R.drawable.ic_thumbnail),
        new Song(getString(R.string.song1), getString(R.string.singer1), 00.00, 04.20, R.drawable.ic_thumbnail),
@@ -131,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
        new Song(getString(R.string.song19), getString(R.string.singer19), 00.00, 11.29, R.drawable.ic_thumbnail)
        };
     }
-
     public void stopcurrentplayingsong() {
         LinearLayout ll=findViewById(R.id.nowplayingfooter);
         ll.setVisibility(View.INVISIBLE);
