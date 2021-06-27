@@ -2,67 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     style="@style/rootview"
     tools:context=".NowPlaying">
 
     <ImageView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/nowplayingthumbnail"
         style="@style/NowPlayingImageView"
-
-
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nowplayingsongname"
         style="@style/NowplayingSong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail"
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/nowplayingthumbnail" />
 
     <ProgressBar
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
         android:id="@+id/nowplayingprogressbar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingsongname"
-
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/nowplayingsongname" />
 
     <TextView
-
         android:id="@+id/nowplayingst"
-
         style="@style/timer"
         android:text="@string/_00_00"
         app:layout_constraintStart_toStartOf="@id/nowplayingprogressbar"
         app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar" />
 
     <TextView
-
-
         android:id="@+id/nowplayinget"
         style="@style/timer"
         android:text="@string/_04_00"
         app:layout_constraintEnd_toEndOf="@id/nowplayingprogressbar"
-        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar"
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/nowplayingprogressbar" />
 
     <LinearLayout
-
         style="@style/nowplayingbuttoncontainer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,42 +55,26 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnshuffle"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
-
-
             app:icon="@drawable/ic_shuffle" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnback"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
-
-
-
             app:icon="@drawable/ic_back" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnplaypause"
-
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
-
-
             app:icon="@drawable/ic_play" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnnext"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
-
-
-
             app:icon="@drawable/ic_next" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnrepeat"
             style="@style/Themeoverlay.MaterialComponents.Button.OutlinedButton"
-
-
-
             app:icon="@drawable/ic_repeat" />
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
