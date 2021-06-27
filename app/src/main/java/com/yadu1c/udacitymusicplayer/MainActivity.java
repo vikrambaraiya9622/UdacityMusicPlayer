@@ -12,13 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.yadu1c.udacitymusicplayer.Adapter.SongApapter;
 import com.yadu1c.udacitymusicplayer.Adapter.SongGridViewAdapter;
 import com.yadu1c.udacitymusicplayer.Model.Song;
-
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
