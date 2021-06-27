@@ -11,7 +11,8 @@
         android:theme="@style/Theme.UdacityMusicPlayer">
         <activity
             android:name=".NowPlaying"
-            android:label="Song Playing" />
+            android:label="Song Playing"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="My Songs">
