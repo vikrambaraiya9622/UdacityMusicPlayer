@@ -10,7 +10,7 @@
         style="@style/GridImageView" />
 
     <TextView
-        android:id="@+id/songname"
+        android:id="@+id/songName"
         style="@style/GridSong"
 
 
@@ -18,7 +18,7 @@
 
     <TextView
 
-        android:id="@+id/singername"
+        android:id="@+id/singerName"
         style="@style/GridSinger"
 
 
