@@ -6,9 +6,9 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.yadu1c.udacitymusicplayer.Adapter.SongApapter;
 import com.yadu1c.udacitymusicplayer.Adapter.SongGridViewAdapter;
@@ -110,25 +110,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void updatePlaylist() {
         songs = new Song[]{ new Song("Beedi (from Omkara)", "Monty Sharma", 00.00, 04.53, R.drawable.ic_thumbnail),
-       new Song("Swawariya(swawariya)", "Monty sharma", 00.00, 04.20, R.drawable.ic_thumbnail),
-       new Song("Kuch To Hua Hai (Kal ho na Ho)", "Sony Music India", 00.00, 02.33,R.drawable.ic_thumbnail),
-       new Song("Hawa Hawai 2.0 (Tumhari Sulu)", "Kavita Krishnamurty", 00.00, 01.53,R.drawable.ic_thumbnail),
-       new Song("Boro Boro (Radio Edit)", "Arash", 00.00, 04.53, R.drawable.ic_thumbnail),
-       new Song("Koi Ladki Hai (Kuch Kuch Hota Hai)", "Lata Mangeshkar", 00.00, 02.16, R.drawable.ic_thumbnail),
-       new Song("Swag se swagat (Tiger Zinda Hai)", "Vishal Dadlani", 00.00, 03.19, R.drawable.ic_thumbnail),
-       new Song("Bumbro (Mission Kashmir)", "Shankar Mahadevan", 00.00, 04.58, R.drawable.ic_thumbnail),
-       new Song("Crazy kiya re (Dhoom)", "Sunidhi Chauhan", 00.00, 05.11, R.drawable.ic_thumbnail),
-       new Song("Uska hi banana (1920)", "Arjit singh", 00.00, 06.27, R.drawable.ic_thumbnail),
-       new Song("Ik Vaari Aa (Parindey)", "Shirley Setia", 00.00, 03.37, R.drawable.ic_thumbnail),
-       new Song("Tum Itna Jo (Mtv Unlugged)", "Papon", 00.00, 02.53, R.drawable.ic_thumbnail),
-       new Song("Channa ve (from Omkara)", "Akhil Sachdeva", 00.00, 05.42, R.drawable.ic_thumbnail),
-       new Song("Tere Bin (Simba)", "Rahat Fateh Ali", 00.00, 03.55, R.drawable.ic_thumbnail),
-       new Song("Khalibali (Padmavat)", "Shivam Pathak", 00.00, 04.41, R.drawable.ic_thumbnail),
-       new Song("sun le Zara (Singham)", "Arjit Singh", 00.00, 04.17, R.drawable.ic_thumbnail),
-       new Song("Bulleya (Omkara)", "Papon", 00.00, 03.29, R.drawable.ic_thumbnail),
-       new Song("Thodi Der (Half Girlfriend)", "Shreya Ghoshal", 00.00, 03.54, R.drawable.ic_thumbnail),
-       new Song("Sajde (Singham returns)", "Arjit Singh", 00.00, 02.40, R.drawable.ic_thumbnail),
-       new Song("Titli (Chennai Express)", "Gopi Sunder", 00.00, 11.29, R.drawable.ic_thumbnail)
+       new Song(getString(R.string.song1), getString(R.string.singer1), 00.00, 04.20, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song2), getString(R.string.singer2), 00.00, 02.33,R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song3), getString(R.string.singer3), 00.00, 01.53,R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song4), getString(R.string.singer4), 00.00, 04.53, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song5), getString(R.string.singer5), 00.00, 02.16, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song6), getString(R.string.singer6), 00.00, 03.19, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song7), getString(R.string.singer7), 00.00, 04.58, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song8), getString(R.string.singer8), 00.00, 05.11, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song9), getString(R.string.singer9), 00.00, 06.27, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song10), getString(R.string.singer10), 00.00, 03.37, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song11), getString(R.string.singer11), 00.00, 02.53, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song12), getString(R.string.singer12), 00.00, 05.42, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song13), getString(R.string.singer13), 00.00, 03.55, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song14), getString(R.string.singer14), 00.00, 04.41, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song15), getString(R.string.singer15), 00.00, 04.17, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song16), getString(R.string.singer16), 00.00, 03.29, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song17), getString(R.string.singer17), 00.00, 03.54, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song18), getString(R.string.singer18), 00.00, 02.40, R.drawable.ic_thumbnail),
+       new Song(getString(R.string.song19), getString(R.string.singer19), 00.00, 11.29, R.drawable.ic_thumbnail)
        };
     }
 
