@@ -1,16 +1,13 @@
 package com.yadu1c.udacitymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.android.material.button.MaterialButton;
 import com.yadu1c.udacitymusicplayer.Model.Song;
-
 import java.util.Random;
 
 public class NowPlaying extends AppCompatActivity {
@@ -22,47 +19,31 @@ public class NowPlaying extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
         updateplayingsong(MainActivity.currentSong);
-
         Button backbtn=findViewById(R.id.btnback);
         Button nextbtn=findViewById(R.id.btnnext);
         Button shufflebtn=findViewById(R.id.btnshuffle);
         Button repeatbtn=findViewById(R.id.btnrepeat);
         Button playpausebtn=findViewById(R.id.btnplaypause);
-
         backbtn.setOnClickListener(view -> backsong());
-
         nextbtn.setOnClickListener(view -> nextsong());
-
         repeatbtn.setOnClickListener(view -> repeatsong());
         shufflebtn.setOnClickListener(view -> shufflesong());
         playpausebtn.setOnClickListener(view -> playpausesong());
-
-
-
-
-
-
     }
 
     @SuppressLint("SetTextI18n")
     private void updateplayingsong(int currentSong) {
         Song songobj= MainActivity.songs[currentSong];
-
-
         String songname=songobj.getmName();
         int thumbnail=songobj.getmThumbnail();
         double starttime=songobj.getmStartTime();
         double endttime=songobj.getmEndTime();
-
-
         TextView songnametv=findViewById(R.id.nowplayingsongname);
         TextView sttv=findViewById(R.id.nowplayingst);
         TextView ettv=findViewById(R.id.nowplayinget);
         ImageView thumbnailimg=findViewById(R.id.nowplayingthumbnail);
         songnametv.setText(songname);
-
         thumbnailimg.setImageResource(thumbnail);
-
         sttv.setText(""+starttime);
         ettv.setText(""+endttime);
         MainActivity.nowPlayingFooterFlag =true;
