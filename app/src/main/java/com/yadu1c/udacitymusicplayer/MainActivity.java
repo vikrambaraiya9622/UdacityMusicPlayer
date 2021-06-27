@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     static Song[] songs;
     public static int currentSong;
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Context context = getApplicationContext();
+        LinearLayout nowPlayingFooterLayout=findViewById(R.id.nowPlayingFooterLayout);
+        nowPlayingFooterLayout.setOnClickListener(view->navigateTo());
         @SuppressLint("UseSwitchCompatOrMaterialCode") Switch changeview = findViewById(R.id.switchState);
         updatePlaylist();
         SongApapter songsListAdapter = new SongApapter(this, Arrays.asList(songs));
@@ -80,6 +83,11 @@ public class MainActivity extends AppCompatActivity {
                 songsGridview.setVisibility(View.INVISIBLE);
             }
         });
+    }
+
+    private void navigateTo() {
+        Intent i=new Intent(this,NowPlaying.class);
+        startActivity(i);
     }
 
     private void updatePlaylist() {
